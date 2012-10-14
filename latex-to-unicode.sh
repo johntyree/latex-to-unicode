@@ -1,7 +1,13 @@
 #!/bin/bash
 
-cd "$(dirname $(echo "$0"))"
-text=$(./gui.py)
+cd $HOME/projects/latex-to-unicode
+
+if [ "$1" == "--gui" ]; then
+    text=$(./gui.py)
+else
+    text=$(python ./convert.py <<< "$@")
+fi
+
 if test -z "$text"; then
 	exit
 fi

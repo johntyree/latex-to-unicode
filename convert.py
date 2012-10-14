@@ -126,3 +126,14 @@ textcal = {}
 textfrak = {}
 textmono = {}
 latex_symbols = []
+
+def main():
+    import sys
+    l = sys.stdin.readline()
+    while l.strip():
+        print convert(l.strip()) ,
+        l = sys.stdin.readline()
+
+
+if __name__ == "__main__":
+    main()
